@@ -12,11 +12,13 @@ public class fizzBuzz {
 
 
     public static final int MAX_VALUE = 101;
+    public static final int fizzbasis = 3;
+    public static final int buzzbasis = 5;
+
 
     public fizzBuzz() {
 
     }
-
 
     /**
      * Main program that parses the command line, creates a
@@ -41,17 +43,28 @@ public class fizzBuzz {
 
     protected static String fizzBuzzConverter(Integer num) {
         StringBuilder sb = new StringBuilder();
-        if (num % 3 == 0) {
-            sb.append("Fizz");
-        }
-        if (num % 5 == 0) {
-            sb.append("Buzz");
-        }
+        sb.append(FizzLogic(num, fizzbasis));
+        sb.append(BuzzLogic(num, buzzbasis));
 
         if (!(num % 3 == 0) && !(num % 5 == 0)) {
             sb.append(num.toString());
         }
         return sb.toString();
     }
+
+    private static String FizzLogic(Integer num, Integer basis) {
+        if (num % basis == 0) {
+            return ("Fizz");
+        }
+        return "";
+    }
+
+    private static String BuzzLogic(Integer num, Integer basis) {
+        if (num % basis == 0) {
+            return ("Buzz");
+        }
+        return "";
+    }
+
 
 }
