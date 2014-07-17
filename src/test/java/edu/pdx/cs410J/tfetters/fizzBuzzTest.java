@@ -1,5 +1,16 @@
 package edu.pdx.cs410J.tfetters;
 
+import org.junit.Test;
+import org.junit.Ignore;
+import static org.junit.Assert.assertTrue;
+import edu.pdx.cs410J.InvokeMainTestCase;
+import static junit.framework.Assert.assertEquals;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.hamcrest.core.StringContains.containsString;
+
+
 import edu.pdx.cs410J.InvokeMainTestCase;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -30,7 +41,6 @@ public class fizzBuzzTest extends InvokeMainTestCase
 
   }
 
-
     @Test
     public void printFourReturnsFour() {
         String result = fizzBuzz.fizzBuzzConverter(4);
@@ -40,16 +50,29 @@ public class fizzBuzzTest extends InvokeMainTestCase
     @Test
     public void printThreeReturnsFizz() {
         String result = fizzBuzz.fizzBuzzConverter(3);
-        assertThat(result, equalTo("fizz"));
+        assertThat(result, equalTo("Fizz"));
     }
 
-    @Ignore
     @Test
-    public void printFizzOnModThree() {
-        MainMethodResult result = invokeMain(fizzBuzz.class);
-        assertThat(result.getOut(), containsString(fizzBuzz.getNumbersFrom1to100()));
-
+    public void printFiveReturnsBuzz() {
+        String result = fizzBuzz.fizzBuzzConverter(5);
+        assertThat(result, equalTo("Buzz"));
     }
+
+    @Test
+    public void printFifteenReturnsFizzBuzz() {
+        String result = fizzBuzz.fizzBuzzConverter(15);
+        assertThat(result, equalTo("FizzBuzz"));
+    }
+
+
+    @Test
+    public void oneHundredOneNotPrinted() {
+        MainMethodResult result = invokeMain(fizzBuzz.class);
+        assertTrue(false == result.getOut().contains("101"));
+    }
+
+
 
 
 
