@@ -1,10 +1,6 @@
 package edu.pdx.cs410J.tfetters;
 
-import edu.pdx.cs410J.lang.Human;
 
-import javax.swing.*;
-import java.util.ArrayList;
-                                                                                    
 /**                                                                                 
  * This class is represents a <code>fizzBuzz</code>.
  */                                                                                 
