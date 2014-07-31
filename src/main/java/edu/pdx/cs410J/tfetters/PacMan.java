@@ -6,9 +6,6 @@ package edu.pdx.cs410J.tfetters;
 public class PacMan {
 
 
-
-
-
     public PacMan() {
 
     }

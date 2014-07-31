@@ -11,13 +11,5 @@ public class PacManPixel {
 
     }
 
-    public void setpixeltype(pixeltype pt) {
-        type=pt;
-    }
-
-    public pixeltype gettype() {
-        return type;
-    }
-    public pixeltype type;
 
 }
